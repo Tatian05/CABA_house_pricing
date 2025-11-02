@@ -2,57 +2,7 @@ import pandas as pd
 
 from utils.funcs import *
 from utils.dolar import valor_dolar_oficial
-
-neighborhoods_caba = [
-    "agronomía",
-    "almagro",
-    "balvanera",
-    "barracas",
-    "belgrano",
-    "boedo",
-    "caballito",
-    "chacarita",
-    "coghlan",
-    "colegiales",
-    "constitución",
-    "flores",
-    "floresta",
-    "la boca",
-    "la paternal",
-    "liniers",
-    "mataderos",
-    "monte castro",
-    "monserrat",
-    "nueva pompeya",
-    "núñez",
-    "palermo",
-    "parque avellaneda",
-    "parque chacabuco",
-    "parque chas",
-    "parque patricios",
-    "puerto madero",
-    "recoleta",
-    "retiro",
-    "saavedra",
-    "san cristóbal",
-    "san nicolás",
-    "san telmo",
-    "vélez sarsfield",
-    "versalles",
-    "villa crespo",
-    "villa del parque",
-    "villa devoto",
-    "villa general Mitre",
-    "villa lugano",
-    "villa luro",
-    "villa ortúzar",
-    "villa pueyrredón",
-    "villa real",
-    "villa riachuelo",
-    "villa santa rita",
-    "villa soldati",
-    "villa urquiza"
-]
+from utils.consts import NEIGHBORHOODS_CABA
 
 def transformation(raw_df:pd.DataFrame):
 
@@ -79,7 +29,7 @@ def transformation(raw_df:pd.DataFrame):
     raw_df["neighborhood"] = (
         raw_df["neighborhood"]
         .str.lower()
-        .apply(lambda x: next((b for b in neighborhoods_caba if b in x), None))
+        .apply(lambda x: next((b for b in NEIGHBORHOODS_CABA if b in x), None))
         .str.capitalize()
     )
     raw_df = raw_df.dropna(subset="neighborhood", ignore_index=True)

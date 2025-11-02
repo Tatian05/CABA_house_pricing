@@ -1,57 +1,8 @@
 import pandas as pd
 import sys, os
-from storage import *
 
-neighborhoods_caba = { "neighborhood": [
-    "agronomía",
-    "almagro",
-    "balvanera",
-    "barracas",
-    "belgrano",
-    "boedo",
-    "caballito",
-    "chacarita",
-    "coghlan",
-    "colegiales",
-    "constitución",
-    "flores",
-    "floresta",
-    "la boca",
-    "la paternal",
-    "liniers",
-    "mataderos",
-    "monte castro",
-    "monserrat",
-    "nueva pompeya",
-    "núñez",
-    "palermo",
-    "parque avellaneda",
-    "parque chacabuco",
-    "parque chas",
-    "parque patricios",
-    "puerto madero",
-    "recoleta",
-    "retiro",
-    "saavedra",
-    "san cristóbal",
-    "san nicolás",
-    "san telmo",
-    "vélez sarsfield",
-    "versalles",
-    "villa crespo",
-    "villa del parque",
-    "villa devoto",
-    "villa general Mitre",
-    "villa lugano",
-    "villa luro",
-    "villa ortúzar",
-    "villa pueyrredón",
-    "villa real",
-    "villa riachuelo",
-    "villa santa rita",
-    "villa soldati",
-    "villa urquiza"
-]}
+from storage import *
+from utils.consts import NEIGHBORHOODS_CABA
 
 def normalization(df: pd.DataFrame):
     dim_operations = (
@@ -65,7 +16,7 @@ def normalization(df: pd.DataFrame):
 
     #------
 
-    dim_neighborhoods = pd.DataFrame(neighborhoods_caba)
+    dim_neighborhoods = pd.DataFrame(NEIGHBORHOODS_CABA, columns=["neighborhood"])
     dim_neighborhoods["neighborhood"] = dim_neighborhoods["neighborhood"].str.capitalize()
     dim_neighborhoods["neighborhood_id"] = pd.Series(range(1, len(dim_neighborhoods) + 1)).astype(int)
     
@@ -109,7 +60,7 @@ def normalization(df: pd.DataFrame):
     
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        config_path = os.path.join(base_dir, "../db_connection.conf")
+        config_path = os.path.join(base_dir, "../dbconfig.conf")
         
         engine = database_connection(config_path, "database", "postgresql+psycopg2")
     
