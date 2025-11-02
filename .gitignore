@@ -1,0 +1,26 @@
+# ------------------------------------
+# Archivos Generales de Sistema Operativo
+# ------------------------------------
+Thumbs.db 
+
+# ------------------------------------
+# Archivos de Python y Entorno
+# ------------------------------------
+# Bytecode generado por Python
+__pycache__/
+*.pyc
+
+# Entornos Virtuales (Carpeta que instala dependencias, innecesaria en el repo)
+.venv/
+venv/
+env/
+
+# ------------------------------------
+# Archivos de Salida, Logs y Datos
+# ------------------------------------
+# Archivos de log
+*.log
+# Archivos de datos generados si no son las fuentes originales
+*.csv
+*.xlsx
+*.conf
