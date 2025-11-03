@@ -7,11 +7,14 @@ permitiendo a los usuarios identificar tendencias de precios y comparar la renta
 
 ---
 
-## Stack Tecnológico
-- **Ingeniería de datos (ETL)**: Python(Pandas)
-- **Almacenamiento**: PostgreSQL
-- **Visualización**: Power BI
-- **Control de versiones**: Github
+## 🛠️ Stack Tecnológico
+
+| Componente | Herramienta |
+| :--- | :--- |
+| **Ingeniería de Datos (ETL)** | Python (Pandas) |
+| **Almacenamiento** | PostgreSQL |
+| **Visualización** | Power BI |
+| **Control de Versiones** | Git / GitHub |
 
 ---
 
