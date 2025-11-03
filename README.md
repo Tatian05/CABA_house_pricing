@@ -45,7 +45,7 @@ El proceso se dividió en tres etapas utilizando scripts de Python.
    Se establecieron relaciones de **Uno a Varios (1:*)** entre las dimensiones y la tabla de hechos.Se creó la tabla 'calendar' como tabla de fechas principal para permitir el análisis temporal.
 2. **Medidas DAX Clave**
    Se crearon medidas explícitas para garantizar la presición de los cálculos y controla el contexto de filto:
-     - **Precio y expensas promedio**: Métricas bases para comparaciones entre barrios.
+     - **Precio, expensas y m² promedio **: Métricas bases para comparaciones justas entre barrios.
      - **Tendencia de Expensas/Precio**: Análisis de la evolución de ambos costos a lo largo del tiempo.
      - **Composición del departamento promedio**: Se utiliza la función *switch* para mostrar y filtar el promedio de las características en un solo gráfico.
 3. **Visualización**
